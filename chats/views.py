@@ -15,11 +15,10 @@ def home_page(request):
 		print('my_age: ', my_age)
 		print('partner_sex: ', partner_sex)
 		print('partner_age: ', partner_age)
-		i_user = User(sex=my_sex, age=my_age)
-		i_user.save(force_insert=True) 
-		obj, created = Dialog.objects.get_or_create(user__sex=partner_sex, user__age=partner_age)
-		if not created:
-			return render(request, 'room.html', locals())
+		#i_user = User(sex=my_sex, age=my_age)
+		#i_user.save(force_insert=True) 
+		partner = Dialog.objects.filter(user__sex='male')
+		print(partner)
 
 	return render(request, 'home_page.html', locals())
 
