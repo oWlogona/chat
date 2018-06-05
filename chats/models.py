@@ -6,8 +6,8 @@ class User(models.Model):
 	sex = models.CharField(max_length=10)
 
 class Dialog(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	sender = models.CharField(max_length=32)
+	user_1 = models.ForeignKey(User, on_delete=models.CASCADE)
+	user_2 = models.CharField(max_length=32)
 	receiver = models.CharField(max_length=32)
 
 class Message(models.Model):
