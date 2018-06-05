@@ -1,7 +1,7 @@
 from django.db import models
 
 class User(models.Model):
-	name = models.CharField(max_length=32)
+	name = models.CharField(max_length=32, default='anonimus')
 	age = models.IntegerField(default=10)
 	sex = models.CharField(max_length=10)
 

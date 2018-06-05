@@ -6,7 +6,21 @@ import json
 
 def home_page(request):
 	if request.method == 'POST':
-		print(request.POST)
+		data = request.POST
+		my_sex = data.get('user_one_sex')
+		my_age = data.get('user_one_age')
+		partner_sex = data.get('user_two_sex')
+		partner_age = data.get('user_two_age')
+		print('my_sex: ', my_sex)
+		print('my_age: ', my_age)
+		print('partner_sex: ', partner_sex)
+		print('partner_age: ', partner_age)
+		i_user = User(sex=my_sex, age=my_age)
+		i_user.save(force_insert=True) 
+		obj, created = Dialog.objects.get_or_create(user__sex=partner_sex, user__age=partner_age)
+		if not created:
+			return render(request, 'room.html', locals())
+
 	return render(request, 'home_page.html', locals())
 
 def room(request):
