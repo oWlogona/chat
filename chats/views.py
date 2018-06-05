@@ -8,7 +8,7 @@ def home_page(request):
 def room(request):
 	return render(request, 'chats/room.html', locals())
 
-def get_massages(request, dialog_id):
+def get_messages(request, dialog_id):
 	pass
 
 def get_user(request, preference):
