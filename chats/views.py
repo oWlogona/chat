@@ -5,10 +5,12 @@ import json
 
 
 def home_page(request):
-	return render(request, 'chats/home_page.html', locals())
+	if request.method == 'POST':
+		print(request.POST)
+	return render(request, 'home_page.html', locals())
 
 def room(request):
-	return render(request, 'chats/room.html', locals())
+	return render(request, 'room_page.html', locals())
 
 def get_messages(request, dialog_id):
 	message = Message.objects.get(dialog=dialog_id)

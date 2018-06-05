@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %}
+   Головна
+{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="#">
+{% endblock %}
+
+{% block content %}
+
+<div class="col-md">
+    <div class="col-md-12 title_card">Анонимное общение</div>
+    <div class="container">
+        <div class="row">
+            <form action="" method="post" class="form_begin">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label for="sex" class="input-group-text">Ваш пол: </label>
+                            </div>
+                            <select name="user_one_sex" class="custom-select" id="inputGroupSelect01">
+                                <option value="secret">Не скажу</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label for="age" class="input-group-text">Ваш возраст: </label>
+                            </div>
+                            <select name="user_one_age" id="age" class="custom-select" id="inputGroupSelect02">
+                                <option value="secret">Не скажу</option>
+                                <option value="17">до 17</option>
+                                <option value="20">от 18 до 21</option>
+                                <option value="23">от 22 до 25</option>
+                                <option value="30">от 26 до 35</option>
+                                <option value="40">старше 36</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label for="sex" class="input-group-text">Собеседника: </label>
+                            </div>
+                            <select name="user_two_sex" class="custom-select" id="inputGroupSelect01">
+                                <option value="secret">Не скажу</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label for="age" class="input-group-text">Собеседника: </label>
+                            </div>
+                            <select name="user_two_age" id="age" class="custom-select" id="inputGroupSelect02">
+                                <option value="secret">Не скажу</option>
+                                <option value="17">до 17</option>
+                                <option value="20">от 18 до 21</option>
+                                <option value="23">от 22 до 25</option>
+                                <option value="30">от 26 до 35</option>
+                                <option value="40">старше 36</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md text-center">
+                        <input type="submit" class="btn btn-primary btn-sm" value="Начать беседу">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md line_separete">
+    <div class="col-md-12 title_card title_card_left">Ввойти под своим @nickName</div>
+    <form action="" method="post" class="form_begin">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">@</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="nickname" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">+38</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="(XXX)-XXX-XX-XX" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="password" required>
+        </div>
+        <div class="col-md text-center">
+            <input type="submit" class="btn btn-primary btn-sm" value="Зарегистрироваться">
+        </div>
+    </form>
+    <hr>
+    <form action="" method="post" class="form_begin">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">+380</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="col-md text-center">
+            <input type="submit" class="btn btn-dark btn-sm" value="Войти">
+        </div>
+    </form>
+</div>
+{% endblock %}

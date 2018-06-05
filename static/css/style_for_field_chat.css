@@ -1,0 +1,46 @@
+.field_massege {
+	padding: 10px;
+}
+.field_massege .list_massage {
+	list-style: none;
+}
+.message_element {
+	display: block;
+    background: #def7fb;
+    padding: 5px;
+    margin-left: -20px;
+	margin-bottom: 5px;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+}
+.list_massage .iam {
+	background: #000;
+	color: #fff;
+	font-weight: bold;
+} 
+.list_massage .anm {
+	background: #4d78a5;
+	color: #fff;
+	font-weight: bold;
+} 
+.message_element .chat_user_name{
+    padding: 3px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffec0b;
+}
+.list_massage .message_element {
+	margin-bottom: 5px;
+}
+
+.field_enter {
+	background-color: #e6e5e5;
+    height: 100px;
+    width: 450px;
+    overflow-y: scroll;
+    margin-left: 5px;
+}
+.btn_sent_message {
+	width: 100px;
+	height: 100px;
+}

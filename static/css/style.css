@@ -1,0 +1,78 @@
+body {
+	font-family: Arial, Times New Roman, sans-serif;
+	background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+
+.user_name {
+	color: #bbb5b5;
+}
+
+.title_card {
+	font-size: 22px;
+	text-decoration: underline;
+	text-align: left;
+}
+.title_card_left {
+	text-align: right;
+}
+.base_element {
+	border: 1px solid gray;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background-color: #f0f0f0;
+}
+
+.title_home {
+	color: #f0f0f0!important;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+}
+
+.form_begin {
+	padding: 20px 10px 10px 10px;
+}
+
+.line_separete {
+	border-left: 1px solid gray;
+}
+
+.list_details_user {
+	list-style: none;
+	padding: 10px;
+	font-size: 14px;
+	font-family: Arial, serif;
+}
+.list_details_user > li {
+	font-weight: bold;
+}
+
+.list_details_user > li > span {
+	color: #008080!important;
+}
+
+.list_details_user > li > span > a {
+	text-decoration: underline;
+}
+----------------------------------------
+.chat_field {
+	width: 100%;
+	min-height: 250px;
+	background-color: #fff;
+	display: block;
+	border: 5px solid green;
+}
+
+----------------------------------------
+.btn_exit_profile {
+	padding: 15px;
+    background: #ca2727;
+    color: #fff;
+    font-weight: bold;
+    width: 75px;
+    font-size: 12px!important;
+    margin-top: -15px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+------------------------------------------
+{}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %}
+    Кімната
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/style_for_field_chat.css' %}">
+{% endblock %}
+{% block content %}
+<div class="col-md">
+    <div class="col-md-12 title_card">Анонимное общение</div>
+    <div class="field_massege" 
+        style="margin: 5px -10px;
+        padding: 5px;
+        border: 1px solid gray;
+        height: 350px;
+        max-height: 600px;
+        overflow-y: scroll;">
+        <ul class="list_massage">
+            <li class="message_element iam">
+                <span class="chat_user_name">Owlog:</span>
+                <span class="user_message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis similique, architecto perspiciatis. Incidunt consequatur nobis vitae laborum!</span>
+            </li>
+            <li class="message_element anm">
+                <span class="chat_user_name">Pupiter:</span>
+                <span class="user_message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis similique, architecto perspiciatis. Incidunt consequatur nobis vitae laborum!</span>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <form action="" method="GET">
+            <input type="text" class="field_enter">
+            <input type="submit" class="btn btn_sent_message" value="SENT">
+        </form>
+    </div>
+</div>
+<div class="col-md line_separete">
+    <div class="col-md-12 title_card title_card_left">Ввойти под своим @nickName</div>
+    <form action="" method="post" class="form_begin">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">@</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="nickname" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">+38</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="(XXX)-XXX-XX-XX" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="password" required>
+        </div>
+        <div class="col-md text-center">
+            <input type="submit" class="btn btn-primary btn-sm" value="Зарегистрироваться">
+        </div>
+    </form>
+    <hr>
+    <form action="" method="post" class="form_begin">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">+380</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+        </div>
+        <div class="col-md text-center">
+            <input type="submit" class="btn btn-dark btn-sm" value="Войти">
+        </div>
+    </form>
+</div>
+{% endblock %}
