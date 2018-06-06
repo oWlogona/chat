@@ -6,11 +6,10 @@ class User(models.Model):
 	sex = models.CharField(max_length=10)
 
 class Dialog(models.Model):
-	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	user_1 = models.CharField(max_length=32)
+	user_1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_1')
+	user_2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_2')
 	user_1_age = models.IntegerField(default=10)
 	user_1_sex = models.CharField(max_length=10, default='secret')
-	user_2 = models.CharField(max_length=32, default=None)
 	user_2_age = models.IntegerField(default=10)
 	user_2_sex = models.CharField(max_length=10, default='secret')
 
