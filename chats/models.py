@@ -8,7 +8,11 @@ class User(models.Model):
 class Dialog(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	user_1 = models.CharField(max_length=32)
+	user_1_age = models.IntegerField(default=10)
+	user_1_sex = models.CharField(max_length=10, default='secret')
 	user_2 = models.CharField(max_length=32, default=None)
+	user_2_age = models.IntegerField(default=10)
+	user_2_sex = models.CharField(max_length=10, default='secret')
 
 class Message(models.Model):
 	dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE)
