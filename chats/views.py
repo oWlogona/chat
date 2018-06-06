@@ -15,17 +15,10 @@ def home_page(request):
         print('my_age: ', my_age)
         print('partner_sex: ', partner_sex)
         print('partner_age: ', partner_age)
-        #i_user = User(sex=my_sex, age=my_age, name=my_sex)
-        #i_user.save(force_insert=True)
-
-        search_dialog = Dialog.objects.get(
-            user_1_age=partner_age, user_1_sex=partner_sex, user_2_age=my_age, user_2_sex=my_sex, user_2=None)
-        if not search_dialog:
-            waiting_dialog = Dialog.objects.get(
-                user_1_age=my_age, user_1_sex=my_sex, user_2_age=partner_age, user_2_sex=partner_sex, user_2=None)
-            print(waiting_dialog)
-        partner = User.objects.filter(sex=partner_sex, age=partner_age)
-        print(partner)
+        i_user = User(sex=my_sex, age=my_age, name=my_sex)
+        i_user.save(force_insert=True)
+        waiting_chat = Dialog.objects.create(user_1=i_user)
+        
 
     return render(request, 'home_page.html', locals())
 

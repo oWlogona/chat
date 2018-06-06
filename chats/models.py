@@ -7,7 +7,7 @@ class User(models.Model):
 
 class Dialog(models.Model):
 	user_1 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_1')
-	user_2 = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_2')
+	user_2 = models.ForeignKey(User, blank=True, null=True, default=None, on_delete=models.CASCADE, related_name='user_2')
 	user_1_age = models.IntegerField(default=10)
 	user_1_sex = models.CharField(max_length=10, default='secret')
 	user_2_age = models.IntegerField(default=10)
