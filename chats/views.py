@@ -21,7 +21,7 @@ def home_page(request):
         	return render(request, 'room_page.html', locals())
         dialog_id = Dialog.objects.create(user_1=i_user, user_1_age=partner_age, user_1_sex=partner_sex)
 
-        url_data = '?user_id=' + str(i_user.id) + '&dialog_id=' + str(dialog_id.id)
+        url_data = '' + str(i_user.id) + '/' + str(dialog_id.id)
         url =  '/room/' + url_data
         return HttpResponseRedirect(url)
     return render(request, 'home_page.html', locals())
