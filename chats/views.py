@@ -27,7 +27,9 @@ def home_page(request):
     return render(request, 'home_page.html', locals())
 
 
-def room(request):
+def room(request, user_id, dialog_id):
+    if request.method == "GET":
+        print('teee')
     return render(request, 'room_page.html', locals())
 
 
