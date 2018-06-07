@@ -31,10 +31,10 @@
         </ul>
     </div>
     <div class="row">
-        <form action="" method="GET" id="chat_forms">
+        <form action="" method="post" id="chat_forms">
             {% csrf_token %}
-            <input type="text" class="field_enter">
-            <input type="submit" class="btn btn_sent_message" value="SENT">
+            <input type="text" class="field_enter" value="{{ search_dialog.id }}">
+            <input type="submit" class="btn btn_sent_message" name="test" value="SENT">
         </form>
     </div>
 </div>

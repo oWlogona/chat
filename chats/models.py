@@ -16,6 +16,7 @@ class Dialog(models.Model):
 	user_2_age = models.IntegerField(default=10)
 	user_2_sex = models.CharField(max_length=10, default='secret')
 
+
 class Message(models.Model):
 	dialog = models.ForeignKey(Dialog, on_delete=models.CASCADE)
 	sender = models.CharField(max_length=32)
