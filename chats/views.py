@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import User, Dialog, Message
 from django.http import HttpResponse
-import json
+from django.http import JsonResponse
 
 
 def home_page(request):
