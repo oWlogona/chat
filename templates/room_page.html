@@ -8,7 +8,6 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'css/style_for_field_chat.css' %}">
-<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
 {% block content %}
 <div class="col-md">
@@ -33,17 +32,17 @@
         </ul>
     </div>
     <div class="row">
-        <form action="" method="post" id="chat_forms">
+        <form action="/room/93/52/" method="post" id="chat_forms">
             {% csrf_token %}
             <input type="text" name="userID{{ user_1_id }}_dialogID{{ off_dialog_id }}" value="{{ off_dialog_id }}" class='hidden_input' hidden>
-            <input type="text" class="field_enter">
-            <input type="submit" class="btn btn_sent_message" name="test" value="SENT">
+            <input type="text" class="field_enter" name='message_{{ id_user }}'>
+            <input type="submit" class="btn btn_sent_message" name="submit" value="SENT">
         </form>
     </div>
 </div>
 <div class="col-md line_separete">
     <div class="col-md-12 title_card title_card_left">Ввойти под своим @nickName</div>
-    <form action="" method="post" class="form_begin">
+    <!--<form action="" method="post" class="form_begin">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">@</span>
@@ -83,6 +82,6 @@
         <div class="col-md text-center">
             <input type="submit" class="btn btn-dark btn-sm" value="Войти">
         </div>
-    </form>
+    </form>-->
 </div>
 {% endblock %}

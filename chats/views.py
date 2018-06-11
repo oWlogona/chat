@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .models import User, Dialog, Message
-from django.http import HttpResponseRedirect, HttpResponse
-import json
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 
 
 def home_page(request):
@@ -35,16 +34,19 @@ def home_page(request):
 
 
 def room(request, user_id, dialog_id):
-    if request.method == "GET":
+    print('rere')
+    if request.method == "POST":
+        print(request.POST)
         user_1_id = user_id
         off_dialog_id = dialog_id
     return render(request, 'room_page.html', locals())
 
 
 def get_messages(request, dialog_id):
+    print('GET')
     if request.method == 'GET':
         print('test')
-    return HttpResponse(data)
+    return JsonResponse(data)
 
 
 def get_user(request, user_id):
