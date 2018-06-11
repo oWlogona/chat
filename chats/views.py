@@ -17,13 +17,15 @@ def home_page(request):
             user_1_age=my_age, user_1_sex=my_sex, user_1__age=partner_age, user_1__sex=partner_sex)
 
         if search_dialog:
-            search_dialog = search_dialog.update(user_2=i_user, user_2_age=partner_age, user_2_sex=partner_sex)
-            answer = Dialog.objects.get(user_2=i_user)
-            user_id = answer.user_1.id
-            dialog_id = answer.id
+            search_dialog = search_dialog.update(
+                user_2=i_user, user_2_age=partner_age, user_2_sex=partner_sex)
+            which_dialog = Dialog.objects.get(user_2=i_user)
+            user_id = which_dialog.user_1.id
+            dialog_id = which_dialog.id
             url_data = '' + str(user_id) + '/' + str(dialog_id)
             url = '/room/' + url_data
             return HttpResponseRedirect(url)
+
         dialog_id = Dialog.objects.create(
             user_1=i_user, user_1_age=partner_age, user_1_sex=partner_sex)
 
@@ -34,18 +36,20 @@ def home_page(request):
 
 
 def room(request, user_id, dialog_id):
-    print('rere')
     if request.method == "POST":
-        print(request.POST)
         user_1_id = user_id
-        off_dialog_id = dialog_id
     return render(request, 'room_page.html', locals())
 
 
 def get_messages(request, dialog_id):
-    print('GET')
+    print('GET:', request.GET)
+    print('POST:', request.POST)
+    data = {'name': 'Artem'}
     if request.method == 'GET':
-        print('test')
+        print('GET')
+
+    if request.method == 'POST':
+        print('POST')
     return JsonResponse(data)
 
 

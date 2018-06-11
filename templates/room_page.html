@@ -32,11 +32,11 @@
         </ul>
     </div>
     <div class="row">
-        <form action="/room/93/52/" method="post" id="chat_forms">
+        <form action="" method="post" id="chat_forms">
             {% csrf_token %}
-            <input type="text" name="userID{{ user_1_id }}_dialogID{{ off_dialog_id }}" value="{{ off_dialog_id }}" class='hidden_input' hidden>
-            <input type="text" class="field_enter" name='message_{{ id_user }}'>
-            <input type="submit" class="btn btn_sent_message" name="submit" value="SENT">
+            <input type="text" name="userID{{ user_1_id }}_dialogID{{ dialog_id }}" value="{{ dialog_id }}" class='hidden_input' hidden>
+            <input type="text" class="field_enter" name='message_'>
+            <input type="submit" class="btn btn_sent_message" name="submit" value="SEND">
         </form>
     </div>
 </div>
@@ -84,4 +84,7 @@
         </div>
     </form>-->
 </div>
+    {% block script %}
+        <script src="{% static 'js/script.js' %}"></script>
+    {% endblock %}
 {% endblock %}
